@@ -130,7 +130,7 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
         print(f"   content preview: {result['content'][:120].replace(chr(10), ' ')}...")
 
     print("\n=== KnowledgeBaseAgent Test ===")
-    if provider == "openai":
+    if os.getenv("OPENAI_API_KEY"):
         agent = KnowledgeBaseAgent(store=store, llm_fn=openai_llm)
     else:
         agent = KnowledgeBaseAgent(store=store, llm_fn=demo_llm)
