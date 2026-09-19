@@ -1,0 +1,95 @@
+======================================================================
+BENCHMARK RETRIEVAL REPORT — VINUNI COURSE REGISTRATION
+Strategy: RecursiveChunker (chunk_size=300)
+======================================================================
+Embedder backend: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Loaded 65 chunks from data/vinuni-course-registration
+Indexed in EmbeddingStore: 65 records
+
+--- Câu hỏi 1 ---
+Query: Cổng đăng ký SIS kỳ Spring 2026 mở lúc nào?
+Gold Answer: Cổng đăng ký SIS mở lúc 14:00 ngày 18/12/2025.
+Target file: lich-dang-ky-spring-2026.md
+Filter áp dụng: Không
+  [1] score=0.8788 doc=lich-dang-ky-spring-2026.md (GOLD)
+      preview: - Lịch học kỳ Spring 2026 được công bố trên SIS từ ngày 15 đến 17/12/2025. - Cổng đăng ký SIS mở lúc...
+  [2] score=0.7528 doc=lich-dang-ky-spring-2026.md (GOLD)
+      preview: # Lịch đăng ký học phần kỳ Spring 2026  Office of the Registrar công bố lịch học và quy trình đăng k...
+  [3] score=0.6019 doc=giang-vien-kiem-tra-lich-spring-2026.md 
+      preview: # Hướng dẫn giảng viên kiểm tra lịch dạy kỳ Spring 2026  Thông báo này dành cho giảng viên, trợ giản...
+=> Kết quả: CO CHUNK LIEN QUAN TRONG TOP-3 (PASS)
+
+--- Câu hỏi 2 ---
+Query: Đăng ký học phần trên SIS gồm những bước nào? Trạng thái nào mới là đăng ký thành công?
+Gold Answer: Đăng nhập SIS → Academics → Course Registration → chọn học kỳ → Register khi Open → Add rồi Register. Trạng thái phải là Registered (Selected = chưa thành công).
+Target file: huong-dan-dang-ky-hoc-phan.md
+Filter áp dụng: Không
+  [1] score=0.7202 doc=huong-dan-dang-ky-hoc-phan.md (GOLD)
+      preview: 1. Xem lại lộ trình học phần gợi ý do Viện cung cấp. 2. Tham khảo khung chương trình để nắm cấu trúc...
+  [2] score=0.7029 doc=huong-dan-dang-ky-hoc-phan.md (GOLD)
+      preview: 1. Đăng nhập SIS bằng email và mật khẩu VinUni. 2. Vào “Academics” → “Course Registration”, chọn đún...
+  [3] score=0.6365 doc=lich-dang-ky-spring-2026.md 
+      preview: Office of the Registrar tự động đăng ký các môn chuyên ngành và bắt buộc theo chương trình MD. Sinh ...
+=> Kết quả: CO CHUNK LIEN QUAN TRONG TOP-3 (PASS)
+
+--- Câu hỏi 3 ---
+Query: Nếu môn trùng giờ hoặc chưa đủ điều kiện tiên quyết thì SIS xử lý thế nào?
+Gold Answer: SIS không cho đăng ký môn trùng giờ và tự động chặn khi chưa đạt tiên quyết. Nếu bị chặn dù nghĩ đủ điều kiện → liên hệ Phòng Quản lý Đào tạo.
+Target file: huong-dan-dang-ky-hoc-phan.md
+Filter áp dụng: Không
+  [1] score=0.6737 doc=huong-dan-dang-ky-hoc-phan.md (GOLD)
+      preview: SIS hiện chưa có danh sách chờ; khi môn đầy, sinh viên cần kiểm tra SIS thường xuyên để tìm chỗ trốn...
+  [2] score=0.5207 doc=huong-dan-dang-ky-hoc-phan.md (GOLD)
+      preview: 5. Tuân thủ thời gian Add/Drop; trong những ngày đầu học kỳ, sinh viên có thể tự chỉnh sửa lịch học ...
+  [3] score=0.4648 doc=lich-dang-ky-spring-2026.md 
+      preview: - Lịch học kỳ Spring 2026 được công bố trên SIS từ ngày 15 đến 17/12/2025. - Cổng đăng ký SIS mở lúc...
+=> Kết quả: CO CHUNK LIEN QUAN TRONG TOP-3 (PASS)
+
+--- Câu hỏi 4 ---
+Query: Sinh viên được rút (withdraw) tối đa bao nhiêu tín chỉ trong cả chương trình? Sau khi đạt giới hạn thì sao?
+Gold Answer: Rút tối đa 18 tín chỉ trong toàn chương trình. Khi đạt giới hạn phải tiếp tục học và nhận điểm cho môn đã đăng ký.
+Target file: sinh-vien-add-drop-withdraw-spring-2026.md
+Filter áp dụng: Không
+  [1] score=0.8197 doc=sinh-vien-add-drop-withdraw-spring-2026.md (GOLD)
+      preview: - Sinh viên được rút tối đa 18 tín chỉ trong toàn chương trình. Khi đạt giới hạn, sinh viên phải tiế...
+  [2] score=0.7508 doc=quy-dinh-hoc-thuat-dai-hoc.md 
+      preview: Withdrawal must occur before completing more than 30% of the course study time. After that point, wi...
+  [3] score=0.6828 doc=sinh-vien-add-drop-withdraw-spring-2026.md (GOLD)
+      preview: - Điểm “W – Withdrawn” xuất hiện trên bảng điểm khi sinh viên đã đăng ký môn rồi nộp yêu cầu rút chí...
+=> Kết quả: CO CHUNK LIEN QUAN TRONG TOP-3 (PASS)
+
+--- Câu hỏi 5 ---
+Query: Trước ngày bắt đầu giảng dạy Spring 2026, tôi cần kiểm tra những gì?
+Gold Answer: Sinh viên phải xác nhận thời gian, địa điểm học và kiểm tra các môn đã đăng ký trên SIS được đồng bộ, hiển thị đúng trên Canvas. Nếu môn có trên SIS nhưng không xuất hiện trên Canvas thì báo Phòng Quản lý Đào tạo.
+Target file: sinh-vien-add-drop-withdraw-spring-2026.md
+Filter áp dụng: {'audience': 'student'}
+  [1] score=0.6837 doc=lich-dang-ky-spring-2026.md 
+      preview: # Lịch đăng ký học phần kỳ Spring 2026  Office of the Registrar công bố lịch học và quy trình đăng k...
+  [2] score=0.6739 doc=sinh-vien-add-drop-withdraw-spring-2026.md (GOLD)
+      preview: | Nội dung | Thời gian | |---|---| | Bắt đầu giảng dạy Spring 2026 | 09/02/2026 | | Hạn đăng ký Tran...
+  [3] score=0.6720 doc=lich-dang-ky-spring-2026.md 
+      preview: - Lịch học kỳ Spring 2026 được công bố trên SIS từ ngày 15 đến 17/12/2025. - Cổng đăng ký SIS mở lúc...
+=> Kết quả: CO CHUNK LIEN QUAN TRONG TOP-3 (PASS)
+
+======================================================================
+A/B TEST CHO CÂU HỎI 5 (KIỂM CHỨNG TÁC DỤNG CỦA METADATA FILTER)
+======================================================================
+Query: Trước ngày bắt đầu giảng dạy Spring 2026, tôi cần kiểm tra những gì?
+
+1) Chạy KHÔNG có metadata_filter:
+  [1] score=0.7833 doc=giang-vien-kiem-tra-lich-spring-2026.md (audience: faculty)
+      preview: # Hướng dẫn giảng viên kiểm tra lịch dạy kỳ Spring 2026  Thông báo này dành cho giảng viên...
+  [2] score=0.6876 doc=giang-vien-kiem-tra-lich-spring-2026.md (audience: faculty)
+      preview: | Nội dung | Thời gian | |---|---| | Bắt đầu giảng dạy Spring 2026 | 09/02/2026 | | Công b...
+  [3] score=0.6837 doc=lich-dang-ky-spring-2026.md (audience: student)
+      preview: # Lịch đăng ký học phần kỳ Spring 2026  Office of the Registrar công bố lịch học và quy tr...
+
+2) Chạy CÓ metadata_filter={'audience': 'student'}:
+  [1] score=0.6837 doc=lich-dang-ky-spring-2026.md (audience: student)
+      preview: # Lịch đăng ký học phần kỳ Spring 2026  Office of the Registrar công bố lịch học và quy tr...
+  [2] score=0.6739 doc=sinh-vien-add-drop-withdraw-spring-2026.md (audience: student)
+      preview: | Nội dung | Thời gian | |---|---| | Bắt đầu giảng dạy Spring 2026 | 09/02/2026 | | Hạn đă...
+  [3] score=0.6720 doc=lich-dang-ky-spring-2026.md (audience: student)
+      preview: - Lịch học kỳ Spring 2026 được công bố trên SIS từ ngày 15 đến 17/12/2025. - Cổng đăng ký ...
+
+Tổng kết: 5/5 câu hỏi có chunk liên quan trong top-3.
