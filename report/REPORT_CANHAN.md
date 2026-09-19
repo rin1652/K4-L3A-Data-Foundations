@@ -6,7 +6,7 @@
 
 > **Nộp 1 bản / sinh viên.** Phần nhóm (lựa chọn tài liệu, thiết kế chiến lược, bộ câu hỏi đánh giá, demo) nộp chung 1 bản trong `REPORT_NHOM.md`. Chi tiết thang điểm: `docs/SCORING.md`.
 
-**Tổng điểm phần cá nhân: 60** = Khởi động (5) + Hướng tiếp cận (10) + Hoàn thiện code (30) + Dự đoán độ tương tự (5) + Kết quả truy xuất của tôi (10).
+**Tổng điểm phần cá nhân: 59** = Khởi động (5) + Hướng tiếp cận (10) + Hoàn thiện code (30) + Dự đoán độ tương tự (5) + Kết quả truy xuất của tôi (9).
 
 ---
 
@@ -196,7 +196,48 @@ Chạy **5 câu hỏi đánh giá của nhóm** trên mã nguồn cá nhân củ
 | 4   | Sinh viên được rút (withdraw) tối đa bao nhiêu tín chỉ trong cả chương trình? Sau khi đạt giới hạn thì sao? | `sinh-vien-add-drop-withdraw-spring-2026.md`: Rút tối đa 18 tín chỉ trong toàn chương trình; đạt giới hạn phải học tiếp và nhận điểm. | 0.8197     | Có (Gold Top-1)                | Sinh viên được rút tối đa 18 tín chỉ trong toàn khóa; sau khi đạt giới hạn phải tiếp tục học và nhận điểm.                      |
 | 5   | Trước ngày bắt đầu giảng dạy Spring 2026, tôi cần kiểm tra những gì? _(Lọc: `audience: student`)_           | `sinh-vien-add-drop-withdraw-spring-2026.md` _(Hạng 2)_: Xác nhận thời gian, địa điểm học; kiểm tra đồng bộ môn giữa SIS và Canvas.   | 0.6739     | Có (Gold Top-2)                | Sinh viên cần xác nhận lịch học, phòng học và kiểm tra đồng bộ môn đăng ký trên SIS hiển thị đúng trên Canvas.                  |
 
+### Chi tiết Top-3 kết quả truy xuất
+
+**Q1: Cổng đăng ký SIS kỳ Spring 2026 mở lúc nào?**
+- Hạng 1: `lich-dang-ky-spring-2026.md` (score=0.8788) - Có chứa thông tin trả lời (2/2)
+- Hạng 2: `lich-dang-ky-spring-2026.md` (score=0.7528) - Có chứa thông tin trả lời
+- Hạng 3: `giang-vien-kiem-tra-lich-spring-2026.md` (score=0.6019) - Không
+
+**Q2: Đăng ký học phần trên SIS gồm những bước nào? Trạng thái nào mới là đăng ký thành công?**
+- Hạng 1: `huong-dan-dang-ky-hoc-phan.md` (score=0.7202) - Có chứa thông tin trả lời (2/2)
+- Hạng 2: `huong-dan-dang-ky-hoc-phan.md` (score=0.7029) - Có chứa thông tin trả lời
+- Hạng 3: `lich-dang-ky-spring-2026.md` (score=0.6365) - Không
+
+**Q3: Nếu môn trùng giờ hoặc chưa đủ điều kiện tiên quyết thì SIS xử lý thế nào?**
+- Hạng 1: `huong-dan-dang-ky-hoc-phan.md` (score=0.6737) - Có chứa thông tin trả lời (2/2)
+- Hạng 2: `huong-dan-dang-ky-hoc-phan.md` (score=0.5207) - Có chứa thông tin trả lời
+- Hạng 3: `lich-dang-ky-spring-2026.md` (score=0.4648) - Không
+
+**Q4: Sinh viên được rút (withdraw) tối đa bao nhiêu tín chỉ trong cả chương trình? Sau khi đạt giới hạn thì sao?**
+- Hạng 1: `sinh-vien-add-drop-withdraw-spring-2026.md` (score=0.8197) - Có chứa thông tin trả lời (2/2)
+- Hạng 2: `quy-dinh-hoc-thuat-dai-hoc.md` (score=0.7508) - Không
+- Hạng 3: `sinh-vien-add-drop-withdraw-spring-2026.md` (score=0.6828) - Có chứa thông tin trả lời
+
+**Q5: Trước ngày bắt đầu giảng dạy Spring 2026, tôi cần kiểm tra những gì?**
+- Hạng 1: `lich-dang-ky-spring-2026.md` (score=0.6837) - Không
+- Hạng 2: `sinh-vien-add-drop-withdraw-spring-2026.md` (score=0.6739) - Có chứa thông tin trả lời (1/2)
+- Hạng 3: `lich-dang-ky-spring-2026.md` (score=0.6720) - Không
+
+### A/B Metadata Filter
+
+- **Top-3 khi không filter**:
+  - Hạng 1: `giang-vien-kiem-tra-lich-spring-2026.md` (score=0.7833)
+  - Hạng 2: `giang-vien-kiem-tra-lich-spring-2026.md` (score=0.6876)
+  - Hạng 3: `lich-dang-ky-spring-2026.md` (score=0.6837)
+- **Top-3 khi dùng `metadata_filter={"audience": "student"}`**:
+  - Hạng 1: `lich-dang-ky-spring-2026.md` (score=0.6837)
+  - Hạng 2: `sinh-vien-add-drop-withdraw-spring-2026.md` (score=0.6739)
+  - Hạng 3: `lich-dang-ky-spring-2026.md` (score=0.6720)
+
+**Kết luận**: Việc sử dụng metadata filter đã giúp loại bỏ các tài liệu không liên quan dành cho giảng viên khỏi kết quả. Nhờ đó, tài liệu chính xác dành cho sinh viên (`sinh-vien-add-drop-withdraw-spring-2026.md`) đã xuất hiện ở hạng 2, cung cấp ngữ cảnh đúng cho mô hình trả lời.
+
 **Bao nhiêu câu hỏi trả về chunk có liên quan trong top-3?** **5 / 5**
+**Tổng điểm benchmark:** **9 / 10**
 
 **Điều hay nhất tôi học được từ thành viên khác / nhóm khác (qua demo):**
 
@@ -212,5 +253,5 @@ Chạy **5 câu hỏi đánh giá của nhóm** trên mã nguồn cá nhân củ
 | Hướng tiếp cận của tôi (My Approach)            | 10 / 10          |
 | Hoàn thiện code (Core Implementation — tests)   | 30 / 30          |
 | Dự đoán độ tương tự (Similarity Predictions)    | 5 / 5            |
-| Kết quả truy xuất của tôi (Competition Results) | 10 / 10          |
-| **Tổng phần cá nhân**                           | **60 / 60**      |
+| Kết quả truy xuất của tôi (Competition Results) | 9 / 10           |
+| **Tổng phần cá nhân**                           | **59 / 60**      |
