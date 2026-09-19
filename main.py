@@ -64,6 +64,17 @@ def demo_llm(prompt: str) -> str:
     return f"[DEMO LLM] Generated answer from prompt preview: {preview}..."
 
 
+def openai_llm(prompt: str) -> str:
+    from openai import OpenAI
+    client = OpenAI()
+    model = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return response.choices[0].message.content or ""
+
+
 def run_manual_demo(question: str | None = None, sample_files: list[str] | None = None) -> int:
     files = sample_files or SAMPLE_FILES
     query = question or "Summarize the key information from the loaded files."
@@ -119,7 +130,10 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
         print(f"   content preview: {result['content'][:120].replace(chr(10), ' ')}...")
 
     print("\n=== KnowledgeBaseAgent Test ===")
-    agent = KnowledgeBaseAgent(store=store, llm_fn=demo_llm)
+    if provider == "openai":
+        agent = KnowledgeBaseAgent(store=store, llm_fn=openai_llm)
+    else:
+        agent = KnowledgeBaseAgent(store=store, llm_fn=demo_llm)
     print(f"Question: {query}")
     print("Agent answer:")
     print(agent.answer(query, top_k=3))
